@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bajaObjectGraph version="4.0" reversibleEncodingKeySource="none" FIPSEnabled="false" reversibleEncodingValidator="[null.1]=" >
+<p h="1" m="b=baja" t="b:Folder">
+ <!-- /WorkbenchWidgets -->
+ <p n="WorkbenchWidgets" h="4" t="b:UnrestrictedFolder">
+  <p n="wsAnnotation" t="b:WsAnnotation" v="2,2,17"/>
+  <!-- /WorkbenchWidgets/ModernGaugeWidget -->
+  <p n="ModernGaugeWidget" h="7" m="mfm=myFirstModule" t="mfm:ModernGaugeWidget">
+   <p n="layout" m="ui=bajaui" t="ui:Layout" v="10.0,20.0,440.0,400.0"/>
+   <!-- /WorkbenchWidgets/ModernGaugeWidget/ValueBinding -->
+   <p n="ValueBinding" h="8" t="ui:ValueBinding">
+    <p n="value" m="conv=converters" t="conv:INumericToNumber">
+    </p>
+    <p n="text" t="conv:ObjectToString">
+     <p n="format" t="b:Format" v="%out.value%"/>
+    </p>
+   </p>
+   <!-- /WorkbenchWidgets/ModernGaugeWidget/compPreviewWidget -->
+   <p n="compPreviewWidget" f="hR" h="9" t="ui:ConstrainedPane">
+    <p n="content" h="a" t="mfm:ModernGaugeWidget">
+     <p n="layout" t="ui:Layout" v="0.0,0.0,150.0,150.0"/>
+    </p>
+    <p n="minSize" m="gx=gx" t="gx:Size" v="150.0,150.0"/>
+   </p>
+   <p n="wsAnnotation" f="r" t="b:WsAnnotation" v="2,2,8"/>
+  </p>
+  <!-- /WorkbenchWidgets/ModernLabel -->
+  <p n="ModernLabel" h="11" t="mfm:ModernLabel">
+   <p n="layout" t="ui:Layout" v="470.0,280.0,100.0,20.0"/>
+   <p n="borderWidth" v="0.0"/>
+   <p n="cornerRadius" v="20.0"/>
+   <!-- /WorkbenchWidgets/ModernLabel/ValueBinding -->
+   <p n="ValueBinding" h="12" t="ui:ValueBinding">
+    <p n="text" t="conv:ObjectToString">
+     <p n="format" t="b:Format" v="%out.value%"/>
+    </p>
+    <p n="background" t="conv:IStatusToSimple">
+     <p n="disabled" t="gx:Brush" v="#d6d6d6"/>
+     <p n="fault" t="gx:Brush" v="#fc7734"/>
+     <p n="down" t="gx:Brush" v="#fac600"/>
+     <p n="alarm" t="gx:Brush" v="#cf1624"/>
+     <p n="stale" t="gx:Brush" v="#d9c09d"/>
+     <p n="overridden" t="gx:Brush" v="#bfaddd"/>
+     <p n="nullStatus" t="gx:Brush" v="white"/>
+     <p n="unackedAlarm" t="gx:Brush" v="white"/>
+     <p n="ok" t="gx:Brush" v="white"/>
+    </p>
+    <p n="foreground" t="conv:IStatusToSimple">
+     <p n="disabled" t="gx:Brush" v="#333333"/>
+     <p n="fault" t="gx:Brush" v="#333333"/>
+     <p n="down" t="gx:Brush" v="#333333"/>
+     <p n="alarm" t="gx:Brush" v="white"/>
+     <p n="stale" t="gx:Brush" v="#333333"/>
+     <p n="overridden" t="gx:Brush" v="#333333"/>
+     <p n="nullStatus" t="gx:Brush" v="null"/>
+     <p n="unackedAlarm" t="gx:Brush" v="null"/>
+     <p n="ok" t="gx:Brush" v="null"/>
+    </p>
+   </p>
+   <p n="wsAnnotation" t="b:WsAnnotation" v="5,6,8"/>
+  </p>
+ </p>
+</p>
+</bajaObjectGraph>
