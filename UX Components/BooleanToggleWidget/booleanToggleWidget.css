@@ -1,0 +1,494 @@
+/* ========================================================================
+ * Boolean Toggle Widget CSS
+ * Pure CSS styling for custom JavaScript boolean toggle widget in Niagara Framework
+ * ======================================================================== */
+
+/* Widget Container - Essential styling only */
+.booleanToggleWidget {
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 25px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent !important;
+}
+
+/* Override parent Niagara styles for transparent background */
+.ux-root {
+    background-color: transparent !important;
+}
+
+/* Ensure proper box-sizing for all widget elements */
+.booleanToggleWidget * {
+    box-sizing: border-box;
+}
+
+/* Main toggle container */
+.boolean-toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    user-select: none;
+    transition: opacity 0.2s ease;
+    padding: 5px; /* Extra padding to prevent transition cutoff */
+}
+
+.boolean-toggle-container.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.boolean-toggle-container.error-state {
+    opacity: 0.7;
+}
+
+.boolean-toggle-container.error-state .toggle-switch {
+    border: 2px solid #dc3545;
+    animation: errorShake 0.5s ease-in-out;
+}
+
+/* Toggle labels layout */
+.toggle-labels {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.toggle-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.toggle-label.active {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Size variants for labels */
+.boolean-toggle-container.small .toggle-label {
+    font-size: 12px;
+}
+
+.boolean-toggle-container.large .toggle-label {
+    font-size: 16px;
+}
+
+/* Toggle switch track */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.toggle-switch:focus {
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+}
+
+.toggle-switch:hover .toggle-knob {
+    transform: scale(1.05);
+}
+
+.boolean-toggle-container.disabled .toggle-switch {
+    cursor: not-allowed;
+}
+
+.toggle-track {
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    border-radius: inherit;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Toggle knob */
+.toggle-knob {
+    position: absolute;
+    top: 50%;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transform: translateY(-50%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+/* Size variants - Medium (default) */
+.boolean-toggle-container.medium .toggle-switch,
+.boolean-toggle-container:not(.small):not(.large) .toggle-switch {
+    width: 60px;
+    height: 34px;
+}
+
+.boolean-toggle-container.medium .toggle-knob,
+.boolean-toggle-container:not(.small):not(.large) .toggle-knob {
+    width: 26px;
+    height: 26px;
+    left: 4px;
+}
+
+.boolean-toggle-container.medium.on .toggle-knob,
+.boolean-toggle-container:not(.small):not(.large).on .toggle-knob {
+    left: 30px;
+}
+
+/* Size variants - Small */
+.boolean-toggle-container.small .toggle-switch {
+    width: 44px;
+    height: 24px;
+}
+
+.boolean-toggle-container.small .toggle-knob {
+    width: 18px;
+    height: 18px;
+    left: 3px;
+}
+
+.boolean-toggle-container.small.on .toggle-knob {
+    left: 23px;
+}
+
+/* Size variants - Large */
+.boolean-toggle-container.large .toggle-switch {
+    width: 80px;
+    height: 44px;
+}
+
+.boolean-toggle-container.large .toggle-knob {
+    width: 36px;
+    height: 36px;
+    left: 4px;
+}
+
+.boolean-toggle-container.large.on .toggle-knob {
+    left: 40px;
+}
+
+/* Toggle style variants - Rounded (default) */
+.boolean-toggle-container.rounded .toggle-switch,
+.boolean-toggle-container:not(.square):not(.stadium) .toggle-switch {
+    border-radius: 17px;
+}
+
+.boolean-toggle-container.rounded .toggle-track,
+.boolean-toggle-container:not(.square):not(.stadium) .toggle-track {
+    border-radius: 17px;
+}
+
+/* Toggle style variants - Square - Higher specificity */
+.boolean-toggle-container.square .toggle-switch,
+.boolean-toggle-container.square.small .toggle-switch,
+.boolean-toggle-container.square.medium .toggle-switch,
+.boolean-toggle-container.square.large .toggle-switch {
+    border-radius: 4px !important;
+}
+
+.boolean-toggle-container.square .toggle-track,
+.boolean-toggle-container.square.small .toggle-track,
+.boolean-toggle-container.square.medium .toggle-track,
+.boolean-toggle-container.square.large .toggle-track {
+    border-radius: 4px !important;
+}
+
+.boolean-toggle-container.square .toggle-knob,
+.boolean-toggle-container.square.small .toggle-knob,
+.boolean-toggle-container.square.medium .toggle-knob,
+.boolean-toggle-container.square.large .toggle-knob {
+    border-radius: 2px !important;
+}
+
+/* Toggle style variants - Stadium - Size-proportional border-radius */
+.boolean-toggle-container.stadium.small .toggle-switch,
+.boolean-toggle-container.stadium.small .toggle-track {
+    border-radius: 12px !important; /* Half the height (24px/2) for proper stadium shape */
+}
+
+.boolean-toggle-container.stadium.medium .toggle-switch,
+.boolean-toggle-container.stadium.medium .toggle-track,
+.boolean-toggle-container.stadium:not(.small):not(.large) .toggle-switch,
+.boolean-toggle-container.stadium:not(.small):not(.large) .toggle-track {
+    border-radius: 17px !important; /* Half the height (34px/2) for proper stadium shape */
+}
+
+.boolean-toggle-container.stadium.large .toggle-switch,
+.boolean-toggle-container.stadium.large .toggle-track {
+    border-radius: 22px !important; /* Half the height (44px/2) for proper stadium shape */
+}
+
+.boolean-toggle-container.stadium .toggle-knob,
+.boolean-toggle-container.stadium.small .toggle-knob,
+.boolean-toggle-container.stadium.medium .toggle-knob,
+.boolean-toggle-container.stadium.large .toggle-knob {
+    border-radius: 4px !important; /* Keep knob less rounded for contrast */
+}
+
+/* State transitions and animations */
+.boolean-toggle-container.on .toggle-track {
+    background-color: #4CAF50;
+}
+
+.boolean-toggle-container.off .toggle-track {
+    background-color: #ccc;
+}
+
+/* Enhanced hover effects */
+.toggle-switch:hover .toggle-track {
+    filter: brightness(0.95);
+}
+
+.boolean-toggle-container.on .toggle-switch:hover .toggle-track {
+    filter: brightness(1.05);
+}
+
+/* Active/pressed state */
+.toggle-switch:active .toggle-knob {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* Focus ring for accessibility */
+.toggle-switch:focus-visible {
+    outline: 2px solid #4CAF50;
+    outline-offset: 2px;
+}
+
+/* Loading/transitioning state */
+.boolean-toggle-container.transitioning .toggle-knob {
+    animation: togglePulse 0.6s ease-in-out;
+}
+
+/* Error state animation */
+@keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+@keyframes togglePulse {
+    0%, 100% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.1); }
+}
+
+/* Label click animation */
+.toggle-label:active {
+    transform: scale(0.98);
+}
+
+/* Custom properties for easy theming */
+:root {
+    --toggle-on-color: #4CAF50;
+    --toggle-off-color: #ccc;
+    --toggle-knob-color: #fff;
+    --toggle-text-color: #333;
+    --toggle-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --toggle-focus-color: rgba(76, 175, 80, 0.3);
+}
+
+/* Dark mode support */
+.dark-mode {
+    --toggle-on-color: #66BB6A;
+    --toggle-off-color: #555;
+    --toggle-knob-color: #f5f5f5;
+    --toggle-text-color: #f0f0f0;
+    --toggle-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    --toggle-focus-color: rgba(102, 187, 106, 0.4);
+}
+
+/* Apply custom properties */
+.boolean-toggle-container.on .toggle-track {
+    background-color: var(--toggle-on-color);
+}
+
+.boolean-toggle-container.off .toggle-track {
+    background-color: var(--toggle-off-color);
+}
+
+.toggle-knob {
+    background-color: var(--toggle-knob-color);
+    box-shadow: var(--toggle-shadow);
+}
+
+.toggle-label {
+    color: var(--toggle-text-color);
+}
+
+.toggle-switch:focus {
+    box-shadow: 0 0 0 3px var(--toggle-focus-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .boolean-toggle-container {
+        gap: 8px;
+    }
+    
+    .toggle-labels {
+        gap: 10px;
+    }
+    
+    /* Slightly larger touch targets on mobile */
+    .boolean-toggle-container.small .toggle-switch {
+        width: 50px;
+        height: 28px;
+    }
+    
+    .boolean-toggle-container.small .toggle-knob {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .boolean-toggle-container.small.on .toggle-knob {
+        left: 26px;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .toggle-track {
+        border: 2px solid currentColor;
+    }
+    
+    .boolean-toggle-container.on .toggle-track {
+        background-color: #000;
+        color: #fff;
+    }
+    
+    .boolean-toggle-container.off .toggle-track {
+        background-color: #fff;
+        color: #000;
+    }
+    
+    .toggle-knob {
+        border: 2px solid currentColor;
+    }
+    
+    .toggle-label {
+        font-weight: bold;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .toggle-knob,
+    .toggle-track,
+    .toggle-label,
+    .boolean-toggle-container {
+        transition: none;
+    }
+    
+    .toggle-switch:hover .toggle-knob {
+        transform: translateY(-50%);
+    }
+    
+    @keyframes togglePulse {
+        0%, 100% { transform: translateY(-50%) scale(1); }
+    }
+    
+    @keyframes errorShake {
+        0%, 100% { transform: translateX(0); }
+    }
+}
+
+/* Print styles */
+@media print {
+    .boolean-toggle-container {
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+    
+    .boolean-toggle-container::after {
+        content: " [" attr(aria-checked) "]";
+        font-weight: bold;
+    }
+}
+
+/* Special styling for different container layouts */
+.boolean-toggle-container.vertical {
+    flex-direction: column;
+    gap: 8px;
+}
+
+.boolean-toggle-container.vertical .toggle-labels {
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Icon support for labels */
+.toggle-label.with-icon {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.toggle-label .icon {
+    font-size: 0.9em;
+}
+
+/* Loading state */
+.boolean-toggle-container.loading {
+    pointer-events: none;
+}
+
+.boolean-toggle-container.loading .toggle-knob {
+    animation: toggleLoading 1s linear infinite;
+}
+
+@keyframes toggleLoading {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Validation states */
+.boolean-toggle-container.valid .toggle-switch {
+    border: 2px solid #28a745;
+}
+
+.boolean-toggle-container.invalid .toggle-switch {
+    border: 2px solid #dc3545;
+}
+
+/* Tooltip support */
+.boolean-toggle-container[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+    margin-bottom: 4px;
+}
+
+/* Ensure proper stacking order */
+.boolean-toggle-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Animation performance optimizations */
+.toggle-knob,
+.toggle-track {
+    will-change: transform, background-color;
+}
