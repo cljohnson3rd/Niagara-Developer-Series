@@ -1,0 +1,34 @@
+#
+# Lexicon for the myFirstModule module.
+#
+
+# Boolean Toggle Widget
+BooleanToggleWidget.displayName=Boolean Toggle Widget
+BooleanToggleWidget.description=A customizable boolean toggle switch widget for BooleanWritable points
+
+booleanToggleWidget.onLabel=ON
+booleanToggleWidget.offLabel=OFF
+
+booleanToggleWidget.size.small=Small
+booleanToggleWidget.size.medium=Medium  
+booleanToggleWidget.size.large=Large
+
+booleanToggleWidget.toggleStyle.rounded=Rounded
+booleanToggleWidget.toggleStyle.square=Square
+booleanToggleWidget.toggleStyle.pill=Pill
+
+booleanToggleWidget.properties.onColor=On Color
+booleanToggleWidget.properties.offColor=Off Color
+booleanToggleWidget.properties.knobColor=Knob Color
+booleanToggleWidget.properties.size=Size
+booleanToggleWidget.properties.showLabels=Show Labels
+booleanToggleWidget.properties.onLabel=On Label
+booleanToggleWidget.properties.offLabel=Off Label
+booleanToggleWidget.properties.toggleStyle=Toggle Style
+booleanToggleWidget.properties.disabled=Disabled
+booleanToggleWidget.properties.font=Font
+booleanToggleWidget.properties.textColor=Text Color
+
+booleanToggleWidget.error.notBooleanWritable=Point must be a BooleanWritable
+booleanToggleWidget.error.pointNotFound=No point bound to widget
+booleanToggleWidget.error.writeFailed=Failed to write boolean value
