@@ -1,0 +1,8 @@
+# Point Label Widget
+pointLabelWidget.status.ok=OK
+pointLabelWidget.status.unknown=Unknown Point
+pointLabelWidget.status.error=Error
+pointLabelWidget.status.loading=Loading...
+pointLabelWidget.errors.pointNotFound=No point bound to widget
+pointLabelWidget.errors.actionFailed=Action Failed
+pointLabelWidget.labels.status=Status

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bajaObjectGraph version="4.0" reversibleEncodingKeySource="none" FIPSEnabled="false" reversibleEncodingValidator="[null.1]=" >
+<p h="1" m="b=baja" t="b:Folder">
+ <!-- /ToggleSwitches -->
+ <p n="ToggleSwitches" h="2" t="b:UnrestrictedFolder">
+  <p n="wsAnnotation" t="b:WsAnnotation" v="6,4,8"/>
+  <!-- /ToggleSwitches/BooleanToggleWidget -->
+  <p n="BooleanToggleWidget" h="3" m="wb=workbench" t="wb:WebWidget">
+   <p n="layout" m="ui=bajaui" t="ui:Layout" v="60.0,220.0,170.0,50.0"/>
+   <p n="js" t="b:Ord" v="view:myFirstModule:BooleanToggleWidget"/>
+   <!-- /ToggleSwitches/BooleanToggleWidget/WbViewBinding -->
+   <p n="WbViewBinding" h="5" t="wb:WbViewBinding">
+   </p>
+   <p n="onColor" f="3" m="gx=gx" t="gx:Brush" v="#4caf50"/>
+   <p n="offColor" f="3" t="gx:Brush" v="#cccccc"/>
+   <p n="knobColor" f="3" t="gx:Brush" v="white"/>
+   <p n="size" f="3" m="mfm=myFirstModule" t="mfm:SizeEnum" v="medium"/>
+   <p n="showLabels" f="3" t="b:Boolean" v="true"/>
+   <p n="onLabel" f="3" t="b:String" v="ON"/>
+   <p n="offLabel" f="3" t="b:String" v="OFF"/>
+   <p n="toggleStyle" f="3" t="mfm:ToggleStyleEnum" v="rounded"/>
+   <p n="disabled" f="3" t="b:Boolean" v="false"/>
+   <p n="font" f="3" t="gx:Font" v="null"/>
+   <p n="textColor" f="3" t="gx:Color" v="#333333"/>
+   <p n="wsAnnotation" t="b:WsAnnotation" v="4,4,12"/>
+  </p>
+ </p>
+ <!-- /PointLabels -->
+ <p n="PointLabels" h="7" t="b:Folder">
+  <p n="wsAnnotation" t="b:WsAnnotation" v="6,9,8"/>
+  <!-- /PointLabels/PointLabelWidget -->
+  <p n="PointLabelWidget" h="8" t="wb:WebWidget">
+   <p n="layout" t="ui:Layout" v="100.0,150.0,140.0,60.0"/>
+   <p n="js" t="b:Ord" v="view:myFirstModule:PointLabelWidget"/>
+   <!-- /PointLabels/PointLabelWidget/WbViewBinding -->
+   <p n="WbViewBinding" h="a" t="wb:WbViewBinding">
+   </p>
+   <p n="showStatus" f="3" t="b:Boolean" v="true"/>
+   <p n="backgroundColor" f="3" t="gx:Brush" v="white"/>
+   <p n="textColor" f="3" t="gx:Color" v="#333333"/>
+   <p n="valueColor" f="3" t="gx:Color" v="#28a745"/>
+   <p n="valueFont" f="3" t="gx:Font" v="null"/>
+   <p n="customLabel" f="3" t="b:String" v=""/>
+   <p n="wsAnnotation" t="b:WsAnnotation" v="8,7,10"/>
+  </p>
+ </p>
+</p>
+</bajaObjectGraph>

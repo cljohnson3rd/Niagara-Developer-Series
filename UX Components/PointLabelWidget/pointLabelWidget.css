@@ -1,0 +1,189 @@
+/**
+ * pointLabelWidget.css - Drop-in replacement CSS
+ * Simple status-based styling with existing class names
+ */
+
+.point-label-widget {
+  display: inline-block;
+  min-width: 80px;
+  max-width: 200px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.point-label-widget:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+}
+
+.point-header {
+  margin-bottom: 4px;
+}
+
+.point-name {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #495057;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.point-value-container {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
+.point-value {
+  font-size: 16px;
+  font-weight: bold;
+  color: #28a745;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.point-units {
+  font-size: 12px;
+  color: #6c757d;
+  font-weight: normal;
+}
+
+.point-status {
+  font-size: 10px;
+  color: #666;
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Status-based styling */
+.point-label-widget.status-ok {
+  border-color: #28a745;
+  background-color: #f8fff9;
+}
+
+.point-label-widget.status-ok .point-value {
+  color: #155724;
+}
+
+.point-label-widget.status-fault {
+  border-color: #dc3545;
+  background-color: #fff5f5;
+}
+
+.point-label-widget.status-fault .point-value {
+  color: #721c24;
+}
+
+.point-label-widget.status-fault .point-name {
+  color: #721c24;
+}
+
+.point-label-widget.status-down {
+  border-color: #6c757d;
+  background-color: #f8f9fa;
+}
+
+.point-label-widget.status-down .point-value {
+  color: #495057;
+}
+
+.point-label-widget.status-down .point-name {
+  color: #495057;
+}
+
+.point-label-widget.status-disabled {
+  border-color: #6f42c1;
+  background-color: #faf5ff;
+  opacity: 0.8;
+}
+
+.point-label-widget.status-disabled .point-value {
+  color: #4c1d95;
+}
+
+.point-label-widget.status-unacked-alarm {
+  border-color: #fd7e14;
+  background-color: #fff8f0;
+  animation: pulse-alarm 1s infinite;
+}
+
+.point-label-widget.status-unacked-alarm .point-value {
+  color: #8a4100;
+  font-weight: bold;
+}
+
+.point-label-widget.status-unacked-alarm .point-name {
+  color: #8a4100;
+}
+
+/* Blinking animation for unacked alarms */
+@keyframes pulse-alarm {
+  0% { opacity: 1; border-width: 1px; }
+  50% { opacity: 0.7; border-width: 2px; }
+  100% { opacity: 1; border-width: 1px; }
+}
+
+/* Compact variant for graphics */
+.point-label-widget.compact {
+  min-width: 60px;
+  max-width: 120px;
+  padding: 4px 6px;
+}
+
+.point-label-widget.compact .point-name {
+  font-size: 10px;
+}
+
+.point-label-widget.compact .point-value {
+  font-size: 14px;
+}
+
+.point-label-widget.compact .point-units {
+  font-size: 10px;
+}
+
+.point-label-widget.compact .point-status {
+  font-size: 8px;
+}
+
+/* Large variant */
+.point-label-widget.large {
+  min-width: 100px;
+  max-width: 250px;
+  padding: 12px;
+}
+
+.point-label-widget.large .point-name {
+  font-size: 14px;
+}
+
+.point-label-widget.large .point-value {
+  font-size: 20px;
+}
+
+.point-label-widget.large .point-units {
+  font-size: 14px;
+}
+
+.point-label-widget.large .point-status {
+  font-size: 12px;
+}
+
+/* Right-click context menu styling */
+.point-label-widget:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
